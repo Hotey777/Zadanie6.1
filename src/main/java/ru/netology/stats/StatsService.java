@@ -5,11 +5,16 @@ import java.util.Arrays;
 public class StatsService {
 
     public long sum(long[] sales) {          //Считаем сумму
-        return Arrays.stream(sales).sum();
+        int sum = 0;
+        for (long sale : sales) {
+            sum += sale;
     }
+    return sum;
+}
+
 
     public long middle(long[] sales) {       //Считаем среднее значение
-        return Arrays.stream(sales).sum() / sales.length;
+        return sum(sales) / sales.length;
     }
 
     public int maxSales(long[] sales) {  //Пик продаж
