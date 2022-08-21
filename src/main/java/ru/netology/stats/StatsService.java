@@ -1,7 +1,5 @@
 package ru.netology.stats;
 
-import java.util.Arrays;
-
 public class StatsService {
 
     public long sum(long[] sales) {          //Считаем сумму
@@ -42,7 +40,7 @@ public class StatsService {
     }
 
     public int underMid(long[] sales) {  //Количество дней с продажами ниже среднего
-        int middle = (int) (Arrays.stream(sales).sum() / sales.length);
+        int middle = (int) (sum(sales) / sales.length);
         int month = 0;
         for (long sale : sales) {
             if (sale < middle) {
@@ -53,7 +51,7 @@ public class StatsService {
     }
 
     public int upperMid(long[] sales) {  //Количество дней с продажами выше среднего
-        int middle = (int) (Arrays.stream(sales).sum() / sales.length);
+        int middle = (int) (sum(sales) / sales.length);
         int month = 0;
         for (long sale : sales) {
             if (sale > middle) {
